@@ -2,9 +2,6 @@
 
 interface
 
-uses
-  Rest.Client, Rest.Types;
-
 type
   TIPWhoFlag = record
     imgURL: string;
@@ -67,7 +64,7 @@ type
 implementation
 
 uses
-  System.JSON, System.DateUtils;
+  System.JSON, System.DateUtils, Rest.Client, Rest.Types;
 
 { TIPWho }
 
