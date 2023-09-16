@@ -67,7 +67,7 @@ type
 implementation
 
 uses
-  System.JSON;
+  System.JSON, System.DateUtils;
 
 { TIPWho }
 
@@ -201,9 +201,12 @@ begin
       // UTC
       if not rest.Response.JSONValue.TryGetValue<string>('timezone.utc', Result.timezone.utc) then
         Result.timezone.utc := '';
-      // UTC
-      if not rest.Response.JSONValue.TryGetValue<TDateTime>('timezone.current_time', Result.timezone.currentTime) then
-        Result.timezone.currentTime := 0;
+      // Current DateTime
+      var tmpDateTime: string;
+      if not rest.Response.JSONValue.TryGetValue<string>('timezone.current_time', tmpDateTime) then
+        Result.timezone.currentTime := 0
+      else
+        Result.timezone.currentTime := ISO8601ToDate(tmpDateTime, False);
     end;
   finally
     rest.Free;
