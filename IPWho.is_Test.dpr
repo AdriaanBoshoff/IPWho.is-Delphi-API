@@ -11,8 +11,12 @@ uses
 
 procedure Main;
 begin
+  // Get Info
   var ipInfo := TIPWho.GetIPInfo();
-  Writeln(ipInfo.ip);
+
+  Writeln('IP: ' + ipInfo.ip);
+  Writeln('Country: ' + ipInfo.country);
+
   Writeln('Raw Data:');
   Writeln(ipInfo.rawData);
 end;
