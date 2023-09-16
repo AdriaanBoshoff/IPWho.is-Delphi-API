@@ -1,5 +1,5 @@
 # IPWho.is Delphi API
- Delphi API to interface with ipwho.is
+ Delphi API to interface with https://ipwho.is/
 
 ## Usage
 
