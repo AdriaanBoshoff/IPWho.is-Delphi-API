@@ -17,6 +17,8 @@ begin
   Writeln('IP: ' + ipInfo.ip);
   Writeln('Country: ' + ipInfo.country);
 
+  Writeln('Current DateTime: ' + ipInfo.timezone.currentTime.ToString);
+
   Writeln('Raw Data:');
   Writeln(ipInfo.rawData);
 end;
